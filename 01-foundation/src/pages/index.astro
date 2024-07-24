@@ -1,0 +1,19 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+// server only
+const name = "javier";
+---
+
+<MainLayout title="Home page">
+  <h1>Home {name}</h1>
+  <p>
+    Momento actual: {new Date().toLocaleTimeString()}
+  </p>
+  <p id="current-time">Momento actual real:</p>
+
+  <script is:inline data-astro-rerun>
+    document.querySelector("#current-time").innerHTML =
+      `Momento actual real: ${new Date().toLocaleTimeString()}`;
+  </script>
+</MainLayout>
