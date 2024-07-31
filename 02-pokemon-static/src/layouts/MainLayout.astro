@@ -1,4 +1,5 @@
 ---
+import Navbar from "@components/shared/Navbar.astro";
 import { ViewTransitions } from "astro:transitions";
 import { SiteInfo } from "src/constants/site-info";
 
@@ -40,8 +41,9 @@ const {
       }
     </style> -->
   </head>
-  <body class="bg-slate-800 text-slate-100 m-auto max-w-3xl">
-    <main class="mt-10">
+  <body class="bg-slate-800 text-slate-100">
+    <Navbar />
+    <main class="mt-10 max-w-3xl mx-auto px-4 pb-4">
       <slot />
     </main>
   </body>
