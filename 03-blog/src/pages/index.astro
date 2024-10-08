@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
+import TypedBlogPost from "src/components/TypedBlogPost.astro";
 import { SiteConfig } from "../config/site-config";
 import MainLayout from "../layouts/MainLayout.astro";
-import TypedBlogPost from "src/components/TypedBlogPost.astro";
 
-const blogPosts = await getCollection("blog");
+const blogPosts = await getCollection("blog", (post) => !post.data.isDraft);
 console.log("🚀 ~ blogPosts:", blogPosts);
-console.log("blogPost1", blogPosts[0].slug);
+// console.log("blogPost1", blogPosts[0].slug);
 ---
 
 <MainLayout title="Javier's Blog">
